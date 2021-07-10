@@ -1,0 +1,12 @@
+  # ne pas toucher
+core:
+  world:
+    create: false
+
+
+language:
+  FR-fr
+license:
+  public: false
+  private: false
+  

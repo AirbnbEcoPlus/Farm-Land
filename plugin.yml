@@ -1,0 +1,35 @@
+name: FarmWell
+version: 1.0
+author: Krfcm2
+main: fr.endide.farmwell.Main
+commands:
+  fw create:
+    description: Créer une ferme
+    permission: fw.default
+  fw delete:
+    description: Supprimer une ferme
+    permission: fw.default
+  fw menu:
+    description: Ouvrir le menu
+    permission: fw.default
+  fw shop:
+    description: Ouvrir le menu du magasin
+    permission: fw.default
+  fw upgrades:
+    description: Ouvrir le menu des améliorations
+    permission: fw.default
+  fw marketplace:
+    description: Ouvrir le menu des améliorations
+    permission: fw.default
+  fw stats:
+    description: Ouvrir le menu des stats
+    permission: fw.default
+  fwa delete:
+    description: Supprime une ile d'un joueur
+    permission: fw.admin
+  fwa resetstats:
+    description: Reset les stats d'un joueur
+    permission: fw.admin
+  fwa resetmoney:
+    description: Reset l'argent d'un joueur
+    permission: fw.admin
