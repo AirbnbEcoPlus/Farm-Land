@@ -1,12 +1,6 @@
   # ne pas toucher
 core:
   world:
-    create: false
-
-
+    IsExist: false
 language:
   FR-fr
-license:
-  public: false
-  private: false
-  

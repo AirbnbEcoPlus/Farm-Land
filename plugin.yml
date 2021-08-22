@@ -2,6 +2,7 @@ name: FarmWell
 version: 1.0
 author: Krfcm2
 main: fr.endide.farmwell.Main
+load: startup
 commands:
   fw create:
     description: Créer une ferme

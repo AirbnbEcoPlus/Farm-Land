@@ -1,7 +1,5 @@
 package fr.endide.farmwell;
 
-import java.io.File;
-
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.endide.farmwell.commands.fwCreate;
@@ -26,7 +24,6 @@ import fr.endide.farmwell.commands.fwaResetStats;
 import fr.endide.farmwell.commands.fwaResetStatsListen;
 import fr.endide.farmwell.event.eventPrice;
 import fr.endide.farmwell.event.eventSeason;
-import fr.endide.farmwell.startup.startLicense;
 import fr.endide.farmwell.startup.startWorld;
 
 
@@ -61,16 +58,7 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new eventPrice(), this);
 		getServer().getPluginManager().registerEvents(new eventSeason(), this);
 		
-		getServer().getPluginManager().registerEvents(new startLicense(this), this);
 		getServer().getPluginManager().registerEvents(new startWorld(this), this);
-
-
-
-
-
-		
-		
-		
 		
 	}
 	

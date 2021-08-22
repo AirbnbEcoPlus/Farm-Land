@@ -14,12 +14,13 @@ public class startWorld implements Listener {
 	}
 
 	public void onEnable() {
-	    if(main.getConfig().getString("core.world.create") != null) {
+	    if(main.getConfig().get("core.world.create") != null) {
 	    	WorldCreator wc_void = new WorldCreator("farwellWorld");
 			wc_void.environment(World.Environment.NORMAL);
 			wc_void.type(WorldType.NORMAL);
 			wc_void.generator("VoidGenerator");
 			wc_void.createWorld();
+			main.getConfig().set("core.world.create", "true");
 	    	
 	    }
 		}
