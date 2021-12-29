@@ -1,6 +1,7 @@
 package fr.endide.farmwell.startup;
 
 import org.bukkit.World;
+import org.bukkit.WorldBorder;
 import org.bukkit.WorldCreator;
 import org.bukkit.WorldType;
 import org.bukkit.event.Listener;
@@ -15,13 +16,14 @@ public class startWorld implements Listener {
 
 	public void onEnable() {
 	    if(main.getConfig().get("core.world.create") != null) {
-	    	WorldCreator wc_void = new WorldCreator("farwellWorld");
-			wc_void.environment(World.Environment.NORMAL);
-			wc_void.type(WorldType.NORMAL);
-			wc_void.generator("VoidGenerator");
-			wc_void.createWorld();
+	    	WorldCreator world = new WorldCreator("farwellWorld");
+			world.environment(World.Environment.NORMAL);
+			world.type(WorldType.NORMAL);
+			world.createWorld();
+			WorldBorder border = ((World) world).getWorldBorder();
+			border.setSize(10000.0);
+			border.setCenter(0.0, 0.0);
 			main.getConfig().set("core.world.create", "true");
-	    	
 	    }
 		}
 	}

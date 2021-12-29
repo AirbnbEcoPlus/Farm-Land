@@ -1,5 +1,9 @@
 package fr.endide.farmwell;
 
+import java.util.Calendar;
+import java.util.Date;
+
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.endide.farmwell.commands.fwCreate;
@@ -29,6 +33,8 @@ import fr.endide.farmwell.startup.startWorld;
 
 
 public class Main extends JavaPlugin {
+	String datePrice = null;
+	String dateSeason = null;
 	@Override
 	public void onEnable() {
 		saveDefaultConfig();
@@ -55,13 +61,32 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new fwaResetStatsListen(), this);
 		getServer().getPluginManager().registerEvents(new fwaResetMoneyListen(), this);
 		
-		getServer().getPluginManager().registerEvents(new eventPrice(), this);
-		getServer().getPluginManager().registerEvents(new eventSeason(), this);
+		
 		
 		getServer().getPluginManager().registerEvents(new startWorld(this), this);
+		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+			public void run() {
+				Date date = new Date();
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(date);
+				if(cal.get(Calendar.HOUR_OF_DAY) == 12 ) {
+						getPrice(); 
+					}
+				if(cal.get(Calendar.HOUR_OF_DAY) == 24 ) {
+						getPrice();
+				    }
+				}
+			
+		},60L, 72000L);
+		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+			public void run() {
+				
+			}
+		},60L, 1200L);
+	}
+	public void getPrice(){
 		
 	}
-	
 
 
 }
